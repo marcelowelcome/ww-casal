@@ -2,7 +2,7 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr';
 import { type NextRequest, NextResponse } from 'next/server';
 import { isAllowedEmail } from '@/lib/auth/allowed-domains';
 
-const PUBLIC_PATHS = ['/login', '/auth', '/robots.txt'];
+const PUBLIC_PATHS = ['/login', '/auth', '/robots.txt', '/api/diag'];
 
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));
