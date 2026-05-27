@@ -1,0 +1,107 @@
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: ['./src/**/*.{ts,tsx,mdx}'],
+  theme: {
+    extend: {
+      colors: {
+        champagne: {
+          50: '#FBF8F3',
+          100: '#F4EAD5',
+          200: '#E8D2A8',
+          300: '#D7B584',
+          400: '#C8A576',
+          500: '#B8956A',
+          600: '#9B7B53',
+          700: '#7B603E',
+          800: '#5B452B',
+          900: '#3D2D1B',
+        },
+        cocoa: {
+          50: '#F5F2EE',
+          100: '#E5DDD3',
+          200: '#C8BAA6',
+          300: '#A89678',
+          400: '#9A8C77',
+          500: '#6F5F4C',
+          600: '#5C4D3D',
+          700: '#4A3F33',
+          800: '#3A3027',
+          900: '#2A1810',
+        },
+        sand: {
+          50: '#FAF6F0',
+          100: '#F4EFE6',
+          200: '#E8DFD3',
+          300: '#D9CCB9',
+          400: '#C2B197',
+          500: '#A89578',
+        },
+        paper: '#FFFFFF',
+        ink: '#1A0F08',
+        moss: {
+          50: '#F1F4ED',
+          100: '#DEE4D2',
+          500: '#6B7A4A',
+          700: '#4A5532',
+          900: '#2D3520',
+        },
+        terracotta: {
+          50: '#F8EDE6',
+          100: '#EDD2BC',
+          500: '#B2604A',
+          700: '#804330',
+          900: '#5A2E20',
+        },
+        mustard: {
+          50: '#FAF4DC',
+          100: '#F0E1A8',
+          500: '#C99F2E',
+          700: '#8E6F1A',
+          900: '#5A4710',
+        },
+      },
+      fontFamily: {
+        serif: ['Georgia', '"Times New Roman"', '"Source Serif Pro"', 'serif'],
+        sans: ['Arial', 'Helvetica', '"Inter"', 'system-ui', 'sans-serif'],
+        mono: ['ui-monospace', '"SF Mono"', 'Monaco', '"Cascadia Code"', 'monospace'],
+      },
+      fontSize: {
+        display: ['38px', { lineHeight: '46px', letterSpacing: '-0.5px' }],
+        h1: ['36px', { lineHeight: '44px', letterSpacing: '-0.5px' }],
+        h2: ['28px', { lineHeight: '36px', letterSpacing: '-0.3px' }],
+        h3: ['22px', { lineHeight: '30px', letterSpacing: '-0.2px' }],
+        'body-lg': ['17px', { lineHeight: '28px' }],
+        body: ['15px', { lineHeight: '26px' }],
+        'body-sm': ['14px', { lineHeight: '22px' }],
+        caption: ['12px', { lineHeight: '18px' }],
+        eyebrow: ['10px', { lineHeight: '16px', letterSpacing: '4px' }],
+        label: ['10px', { lineHeight: '14px', letterSpacing: '2px' }],
+      },
+      borderRadius: {
+        none: '0',
+        sm: '2px',
+        md: '4px',
+        lg: '8px',
+        full: '9999px',
+      },
+      boxShadow: {
+        none: 'none',
+        focus: '0 0 0 3px rgba(184, 149, 106, 0.35)',
+        card: '0 1px 2px rgba(42, 24, 16, 0.06)',
+      },
+      letterSpacing: {
+        tightest: '-0.5px',
+        tighter: '-0.3px',
+        tight: '-0.2px',
+        normal: '0',
+        wide: '1px',
+        wider: '2px',
+        widest: '4px',
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;

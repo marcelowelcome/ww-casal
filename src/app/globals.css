@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-canvas: #f4efe6;
+    --color-bg-paper: #ffffff;
+    --color-bg-elevated: #faf6f0;
+
+    --color-text-primary: #3a3027;
+    --color-text-heading: #2a1810;
+    --color-text-secondary: #4a3f33;
+    --color-text-muted: #9a8c77;
+    --color-text-accent: #b8956a;
+    --color-text-accent-body: #7b603e;
+
+    --color-border-hairline: #e8dfd3;
+    --color-border-subtle: #e5ddd3;
+    --color-border-accent: #b8956a;
+
+    --ww-focus-ring: 0 0 0 3px rgba(184, 149, 106, 0.35);
+  }
+
+  html,
+  body {
+    background-color: var(--color-bg-canvas);
+    color: var(--color-text-primary);
+    font-family: Arial, Helvetica, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 em,
+  h2 em,
+  h3 em,
+  .display em {
+    color: var(--color-text-accent);
+    font-style: italic;
+    font-weight: inherit;
+  }
+
+  *:focus-visible {
+    outline: none;
+    box-shadow: var(--ww-focus-ring);
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-sans text-eyebrow font-medium uppercase text-champagne-500;
+    margin-bottom: 14px;
+  }
+
+  .ww-display {
+    @apply font-serif text-display font-normal text-cocoa-900;
+  }
+
+  .ww-h1 {
+    @apply font-serif text-h1 font-normal text-cocoa-900;
+  }
+
+  .ww-h2 {
+    @apply font-serif text-h2 font-normal text-cocoa-900;
+  }
+
+  .ww-h3 {
+    @apply font-serif text-h3 font-normal text-cocoa-900;
+  }
+
+  .ww-prose {
+    @apply font-sans text-body text-cocoa-800;
+  }
+
+  .ww-divider-hairline {
+    @apply my-9 border-0 border-t border-sand-200;
+  }
+
+  .ww-divider-ornament {
+    @apply py-6 text-center font-serif text-champagne-500;
+    letter-spacing: 8px;
+    font-size: 13px;
+  }
+
+  .ww-divider-ornament::before {
+    content: '• • •';
+  }
+
+  .print-only {
+    display: none;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page {
+    size: A4;
+    margin: 1.5cm 1.5cm 2cm 1.5cm;
+
+    @bottom-center {
+      content: 'Página ' counter(page) ' de ' counter(pages);
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      color: #9a8c77;
+    }
+  }
+
+  .ww-sidebar,
+  .ww-page-header,
+  .ww-print-btn,
+  .ww-mobile-nav,
+  .ww-search,
+  nav[aria-label='Seções do briefing'] {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .screen-only {
+    display: none !important;
+  }
+
+  .ww-body {
+    display: block !important;
+  }
+
+  body {
+    background: white !important;
+    color: #2a1810 !important;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 22pt;
+  }
+
+  h2 {
+    font-size: 16pt;
+    margin-top: 18pt;
+  }
+
+  h3 {
+    font-size: 13pt;
+  }
+
+  h1 em,
+  h2 em,
+  h3 em {
+    color: #7b603e;
+  }
+
+  section,
+  .ww-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  dl > dt,
+  dl > dd {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 9pt;
+    color: #9a8c77;
+  }
+
+  .ww-ornament {
+    color: #9a8c77 !important;
+  }
+}
